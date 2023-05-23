@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="OSA Catalog" version="1.5">
+   <uniqueKey>id</uniqueKey>
+   <fields>
+     <field name="_version_" type="long" indexed="true" stored="true"/>
+
+     <!-- Common fiels -->
+     <field name="id" type="string" indexed="true" stored="true" required="true" />
+     <field name="ams_id" type="string" indexed="true" stored="true" required="false" />
+
+     <!-- Stored fields for display -->
+     <field name="record_origin" type="string" indexed="false" stored="true" />
+     <field name="archival_level" type="string" indexed="false" stored="true" />
+     <field name="description_level" type="string" indexed="false" stored="true" />
+     <field name="primary_type" type="string" indexed="false" stored="true" />
+     <field name="title" type="string" indexed="false" stored="true" />
+     <field name="title_original" type="string" indexed="false" stored="true" />
+     <field name="reference_code" type="string" indexed="true" stored="true" omitNorms="true" />
+     <field name="date_created" type="string" indexed="false" stored="true" />
+     <field name="creator" type="string" indexed="false" stored="true" multiValued="true"/>
+     
+     <field name="digital_version_exists" type="boolean" indexed="false" stored="true" />
+     <field name="digital_version_online" type="boolean" indexed="false" stored="true" />
+     <field name="digital_version_barcode" type="string" indexed="false" stored="true" />
+
+     <field name="container_type" type="string" indexed="false" stored="true" />
+     <field name="container_number" type="int" indexed="false" stored="true" />
+     <field name="folder_number" type="int" indexed="false" stored="true" />
+     <field name="sequence_number" type="int" indexed="false" stored="true" />
+     <field name="duration" type="string" indexed="false" stored="true" />
+
+     <field name="series_id" type="string" indexed="true" stored="true" />
+     <field name="series_reference_code" type="string" indexed="false" stored="true" omitNorms="true" />
+
+     <field name="isbn" type="string" indexed="false" stored="true" multiValued="true" />
+     <field name="issn" type="string" indexed="false" stored="true" multiValued="true" />
+     <field name="author" type="string" indexed="false" stored="true" multiValued="true" />
+     <field name="publisher" type="string" indexed="false" stored="true" multiValued="true" />
+     <field name="edition" type="string" indexed="false" stored="true" multiValued="true" />
+
+     <field name="extent" type="string" indexed="false" stored="true" multiValued="true"/>
+     <field name="language" type="string" indexed="false" stored="true" multiValued="true" />
+     <field name="director" type="string" indexed="false" stored="true" multiValued="true" />
+     <field name="isaar_creator" type="string" indexed="true" stored="true" multiValued="true"/>
+
+     <!-- Sort fields -->
+     <field name="title_sort" type="alphaSort" indexed="true" stored="false" />
+     <field name="reference_code_sort" type="string" indexed="true" stored="false" omitNorms="true" />
+
+     <!-- Archival Unit sorting -->
+     <field name="fonds_sort" type="int" indexed="true" stored="false" />
+     <field name="subfonds_sort" type="int" indexed="true" stored="false" />
+     <field name="series_sort" type="int" indexed="true" stored="false" />
+     <field name="container_number_sort" type="int" indexed="true" stored="false" />
+     <field name="folder_number_sort" type="int" indexed="true" stored="false" />
+     <field name="sequence_number_sort" type="int" indexed="true" stored="false" />
+     <field name="digital_repository_sort" type="alphaSort" indexed="true" stored="false" />
+
+     <!-- Sort fields for export handler -->
+     <field name="fonds_esort" type="int" indexed="true" stored="false" docValues="true"/>
+     <field name="subfonds_esort" type="int" indexed="true" stored="false" docValues="true"/>
+     <field name="series_esort" type="int" indexed="true" stored="false" docValues="true"/>
+     <field name="container_type_esort" type="int" indexed="true" stored="false" docValues="true"/>
+     <field name="folder_number_esort" type="int" indexed="true" stored="false" docValues="true"/>
+     <field name="container_number_esort" type="int" indexed="true" stored="false" docValues="true"/>
+     <field name="sequence_number_esort" type="int" indexed="true" stored="false" docValues="true"/>
+
+     <!-- Reference number -->
+     <field name="archival_reference_number_search" type="archivalReferenceNumberSearch" indexed="true" stored="false" multiValued="true"/>
+     
+     <!-- Call number fields -->
+     <field name="call_number" type="string" indexed="false" stored="true" multiValued="true"/>
+     <field name="call_number_key" type="alphaSort" indexed="true" stored="true"/>
+     <field name="call_number_reversed_key" type="alphaSort" indexed="true" stored="true"/>
+
+     <!-- Search fields -->
+     <field name="title_search" type="text_en" indexed="true" stored="false" />
+     <field name="title_unstem_search" type="text_general" indexed="true" stored="false" />
+     <field name="title_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="title_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="title_search_pl" type="text_pl" indexed="true" stored="false" />
+     <field name="title_search_it" type="text_it" indexed="true" stored="false" />
+
+     <field name="title_original_search" type="text_general" indexed="true" stored="false" />
+     <field name="title_original_unstem_search" type="text_general" indexed="true" stored="false" />
+
+     <field name="date_created_search" type="int" indexed="true" stored="false" multiValued="true"/>
+     <field name="date_publication_search" type="date" indexed="true" stored="false" />
+
+     <field name="archival_history_search" type="text_en" indexed="true" stored="false" />
+     <field name="archival_history_unstem_search" type="text_general" indexed="true" stored="false" />
+     <field name="archival_history_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="archival_history_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="archival_history_search_pl" type="text_pl" indexed="true" stored="false" />
+     <field name="archival_history_search_it" type="text_it" indexed="true" stored="false" />
+
+     <field name="publication_note_search" type="text_en" indexed="true" stored="false" />
+     <field name="publication_note_unstem_search" type="text_general" indexed="true" stored="false" />
+     <field name="publication_note_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="publication_note_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="publication_note_search_pl" type="text_pl" indexed="true" stored="false" />
+     <field name="publication_note_search_it" type="text_it" indexed="true" stored="false" />
+
+     <field name="creator_search" type="text_general" indexed="true" stored="false" multiValued="true"/>
+     <field name="creator_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true"/>
+
+     <field name="title_uniform_search" type="text_en" indexed="true" stored="false" multiValued="true" />
+     <field name="title_uniform_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true" />
+
+     <field name="title_variant_search" type="text_en" indexed="true" stored="false" multiValued="true" />
+     <field name="title_variant_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true" />
+
+     <field name="administrative_history_search" type="text_en" indexed="true" stored="false" />
+     <field name="administrative_history_unstem_search" type="text_general" indexed="true" stored="false" />
+     <field name="administrative_history_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="administrative_history_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="administrative_history_search_pl" type="text_pl" indexed="true" stored="false" />
+     <field name="administrative_history_search_it" type="text_it" indexed="true" stored="false" />
+
+     <field name="source_of_acquisition_search" type="text_en" indexed="true" stored="false" />
+     <field name="source_of_acquisition_unstem_search" type="text_general" indexed="true" stored="false" />
+
+     <field name="scope_and_content_abstract_search" type="text_en" indexed="true" stored="false" />
+     <field name="scope_and_content_abstract_unstem_search" type="text_general" indexed="true" stored="false" />
+     <field name="scope_and_content_abstract_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="scope_and_content_abstract_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="scope_and_content_abstract_search_pl" type="text_pl" indexed="true" stored="false" />
+     <field name="scope_and_content_abstract_search_it" type="text_it" indexed="true" stored="false" />
+
+     <field name="scope_and_content_narrative_search" type="text_en" indexed="true" stored="false" />
+     <field name="scope_and_content_narrative_unstem_search" type="text_general" indexed="true" stored="false" />
+     <field name="scope_and_content_narrative_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="scope_and_content_narrative_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="scope_and_content_narrative_search_pl" type="text_pl" indexed="true" stored="false" />
+     <field name="scope_and_content_narrative_search_it" type="text_it" indexed="true" stored="false" />
+
+     <field name="appraisal_search" type="text_en" indexed="true" stored="false" />
+     <field name="appraisal_unstem_search" type="text_general" indexed="true" stored="false" />
+
+     <field name="system_of_arrangement_search" type="text_en" indexed="true" stored="false" />
+     <field name="system_of_arrangement_unstem_search" type="text_general" indexed="true" stored="false" />
+
+     <field name="alternative_title_search" type="text_en" indexed="true" stored="false" />
+     <field name="alternative_title_unstem_search" type="text_general" indexed="true" stored="false" />
+
+     <field name="language_statement_search" type="text_en" indexed="true" stored="false" />
+     <field name="language_statement_unstem_search" type="text_general" indexed="true" stored="false" />
+
+     <field name="contents_summary_search" type="text_en" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_unstem_search" type="text_general" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_search_hu" type="text_hu" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_search_ru" type="text_ru" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_search_pl" type="text_pl" indexed="true" stored="false" multiValued="true" />
+     <field name="contents_summary_search_it" type="text_it" indexed="true" stored="false" multiValued="true" />
+
+     <field name="contents_table_search" type="text_en" indexed="true" stored="false" />
+     <field name="contents_table_unstem_search" type="text_general" indexed="true" stored="false" />
+     <field name="contents_table_search_hu" type="text_hu" indexed="true" stored="false" />
+     <field name="contents_table_search_ru" type="text_ru" indexed="true" stored="false" />
+     <field name="contents_table_search_pl" type="text_pl" indexed="true" stored="false" />
+     <field name="contents_table_search_it" type="text_it" indexed="true" stored="false" />
+
+     <field name="associated_country_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="associated_place_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="subject_country_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="subject_place_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+
+     <field name="associated_person_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="associated_corporation_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="subject_person_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="subject_corporation_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+
+     <field name="subject_search" type="text_general" indexed="true" stored="false" multiValued="true" />
+     <field name="spatial_coverage_country_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+     <field name="spatial_coverage_place_search" type="name_general" indexed="true" stored="false" multiValued="true" />
+
+     <field name="digital_version_barcode_search" type="string" indexed="true" stored="false" />
+
+     <!-- Facet fields -->
+     <field name="record_origin_facet" type="string" indexed="true" stored="false" />
+     <field name="archival_level_facet" type="string" indexed="true" stored="false" />
+     <field name="description_level_facet" type="string" indexed="true" stored="false" />
+     <field name="primary_type_facet" type="string" indexed="true" stored="false" />
+     <field name="language_facet" type="string" indexed="true" stored="false" multiValued="true" />
+     <field name="genre_facet" type="string" indexed="true" stored="false" multiValued="true" />
+     <field name="creator_facet" type="string" indexed="true" stored="false" multiValued="true" />
+     <field name="added_person_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="added_corporation_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="added_country_facet" type="string" indexed="true" stored="false" multiValued="true" />
+     <field name="added_geo_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="subject_person_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="subject_corporation_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="subject_geo_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="subject_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="date_created_facet" type="int" indexed="true" stored="false" multiValued="true" />
+     <field name="archival_unit_theme_facet" type="string" indexed="true" stored="false" multiValued="true"/>
+     <field name="digital_version_exists_facet" type="boolean" indexed="true" stored="false" />
+     <field name="availability_facet" type="string" indexed="true" stored="false" />
+     
+     <!-- Browse Lists -->
+     <field name="author_browse" type="string" indexed="true" stored="false" multiValued="true" />
+     <field name="director_browse" type="string" indexed="true" stored="false" multiValued="true" />
+
+     <!-- Fields for export handler -->
+     <field name="id_e" type="string" indexed="false" stored="true" docValues="true" />
+     <field name="reference_code_e" type="string" indexed="false" stored="true" docValues="true"/>
+     <field name="title_e" type="string" indexed="false" stored="true" docValues="true" />
+     <field name="title_original_e" type="string" indexed="false" stored="true" docValues="true" />
+     <field name="description_level_e" type="string" indexed="false" stored="true" docValues="true" />
+     <field name="folder_number_e" type="int" indexed="false" stored="true" docValues="true" />
+     <field name="container_number_e" type="int" indexed="false" stored="true" docValues="true" />
+     <field name="sequence_number_e" type="int" indexed="false" stored="true" docValues="true" />
+     <field name="container_type_e" type="string" indexed="false" stored="true" docValues="true" />
+     <field name="item_json_e" type="string" indexed="false" stored="true" docValues="true" />
+     <field name="archival_unit_theme_e" type="string" indexed="false" stored="true" docValues="true" multiValued="true" />
+
+     <!-- Archival Units display -->
+     <field name="fonds_name" type="string" indexed="false" stored="true" />
+     <field name="subfonds_name" type="string" indexed="false" stored="true" />
+     <field name="series_name" type="string" indexed="false" stored="true" />
+     <field name="archival_unit_theme" type="string" indexed="false" stored="true" multiValued="true" />
+
+     <!-- Connecting IDs -->
+     <field name="fonds" type="string" indexed="true" stored="true" />
+     <field name="subfonds" type="string" indexed="true" stored="true" />
+     <field name="series" type="string" indexed="true" stored="true" />
+     <field name="library_collection" type="string" indexed="true" stored="true" multiValued="true" />
+     <field name="av_collection" type="string" indexed="true" stored="true" multiValued="true" />
+     <field name="digital_collection" type="string" indexed="true" stored="true" />
+     <field name="digital_collection_id" type="string" indexed="true" stored="true" />
+     <field name="digital_collection_series" type="string" indexed="true" stored="false"/>
+
+     <!-- Full Records -->
+     <field name="marc" type="json_field" indexed="false" stored="true" />
+     <field name="marcxml" type="json_field" indexed="false" stored="true" />
+     <field name="isad_json" type="json_field" indexed="false" stored="true" />
+     <field name="isad_json_hu" type="json_field" indexed="false" stored="true" />
+     <field name="item_json" type="json_field" indexed="false" stored="true" />
+   </fields>
+   
+   <copyField source="title_search" dest="title_unstem_search" />
+   <copyField source="title_original_search" dest="title_original_unstem_search" />
+   <copyField source="title_uniform_search" dest="title_uniform_unstem_search" />
+   <copyField source="title_variant_search" dest="title_variant_unstem_search" />
+
+   <copyField source="alternative_title_search" dest="alternative_title_unstem_search" />
+
+   <copyField source="administrative_history_search" dest="administrative_history_unstem_search" />
+   <copyField source="archival_history_search" dest="archival_history_unstem_search" />
+   <copyField source="source_of_acquisition_search" dest="source_of_acquisition_unstem_search" />
+   <copyField source="scope_and_content_abstract_search" dest="scope_and_content_abstract_unstem_search" />
+   <copyField source="scope_and_content_narrative_search" dest="scope_and_content_narrative_unstem_search" />
+   <copyField source="appraisal_search" dest="appraisal_unstem_search" />`
+   <copyField source="system_of_arrangement_search" dest="system_of_arrangement_unstem_search" />
+   <copyField source="publication_note_search" dest="publication_note_unstem_search" />
+
+   <copyField source="language_statement_search" dest="language_statement_unstem_search" />
+   <copyField source="contents_summary_search" dest="contents_summary_unstem_search" />
+   <copyField source="contents_table_search" dest="contents_table_unstem_search" />
+
+   <copyField source="id" dest="id_e" />
+   <copyField source="reference_code" dest="reference_code_e" />
+   <copyField source="description_level" dest="description_level_e" />
+   <copyField source="container_number" dest="container_number_e" />
+   <copyField source="folder_number" dest="folder_number_e" />
+   <copyField source="sequence_number" dest="sequence_number_e" />
+   <copyField source="container_type" dest="container_type_e" />
+   <copyField source="archival_unit_theme" dest="archival_unit_theme_e" />
+
+   <copyField source="fonds_sort" dest="fonds_esort" />
+   <copyField source="subfonds_sort" dest="subfonds_esort" />
+   <copyField source="series_sort" dest="series_esort" />
+   <copyField source="folder_number_sort" dest="folder_number_esort" />
+   <copyField source="container_number_sort" dest="container_number_esort" />
+   <copyField source="sequence_number_sort" dest="sequence_number_esort" />
+
+   <copyField source="author" dest="author_browse" />
+   <copyField source="director" dest="director_browse" />
+
+   <types>
+      <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+      <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+      <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+      <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+
+	  <fieldType name="ints" class="solr.TrieIntField" docValues="true" precisionStep="0" positionIncrementGap="0" multiValued="true"/>
+      <fieldType name="floats" class="solr.TrieFloatField" docValues="true" precisionStep="0" positionIncrementGap="0" multiValued="true"/>
+      <fieldType name="longs" class="solr.TrieLongField" docValues="true" precisionStep="0" positionIncrementGap="0" multiValued="true"/>
+      <fieldType name="doubles" class="solr.TrieDoubleField" docValues="true" precisionStep="0" positionIncrementGap="0" multiValued="true"/>
+
+      <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" positionIncrementGap="0"/>
+      <fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" positionIncrementGap="0"/>
+      <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" positionIncrementGap="0"/>
+      <fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" positionIncrementGap="0"/>
+
+      <fieldType name="tints" class="solr.TrieIntField" docValues="true" precisionStep="8" positionIncrementGap="0" multiValued="true"/>
+      <fieldType name="tfloats" class="solr.TrieFloatField" docValues="true" precisionStep="8" positionIncrementGap="0" multiValued="true"/>
+      <fieldType name="tlongs" class="solr.TrieLongField" docValues="true" precisionStep="8" positionIncrementGap="0" multiValued="true"/>
+      <fieldType name="tdoubles" class="solr.TrieDoubleField" docValues="true" precisionStep="8" positionIncrementGap="0" multiValued="true"/>
+
+      <fieldType name="binary" class="solr.BinaryField"/>
+      <fieldType name="random" class="solr.RandomSortField" indexed="true" />
+
+      <fieldType name="string" class="solr.StrField" sortMissingLast="true" docValues="true" />
+      <fieldType name="strings" class="solr.StrField" sortMissingLast="true" multiValued="true" docValues="true" />
+
+      <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+      <fieldType name="booleans" class="solr.BoolField" sortMissingLast="true" multiValued="true"/>
+
+      <fieldType name="pint" class="solr.IntPointField" docValues="true"/>
+      <fieldType name="pfloat" class="solr.FloatPointField" docValues="true"/>
+      <fieldType name="plong" class="solr.LongPointField" docValues="true"/>
+      <fieldType name="pdouble" class="solr.DoublePointField" docValues="true"/>
+      
+      <fieldType name="pints" class="solr.IntPointField" docValues="true" multiValued="true"/>
+      <fieldType name="pfloats" class="solr.FloatPointField" docValues="true" multiValued="true"/>
+      <fieldType name="plongs" class="solr.LongPointField" docValues="true" multiValued="true"/>
+      <fieldType name="pdoubles" class="solr.DoublePointField" docValues="true" multiValued="true"/>
+
+      <!-- KD-tree versions of date fields -->
+      <fieldType name="pdate" class="solr.DatePointField" docValues="true"/>
+      <fieldType name="pdates" class="solr.DatePointField" docValues="true" multiValued="true"/>
+  
+      <fieldType name="date" class="solr.TrieDateField" docValues="true" precisionStep="0" positionIncrementGap="0"/>
+	  <fieldType name="dates" class="solr.TrieDateField" docValues="true" precisionStep="0" positionIncrementGap="0" multiValued="true"/>
+  
+      <fieldType name="tdate" class="solr.TrieDateField" docValues="true" precisionStep="6" positionIncrementGap="0"/>
+  	  <fieldType name="tdates" class="solr.TrieDateField" docValues="true" precisionStep="6" positionIncrementGap="0" multiValued="true"/>
+  
+      <!-- Analyzed Text, no Stemming -->
+      <fieldtype name="text_general" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+        <analyzer>
+          <tokenizer class="solr.WhitespaceTokenizerFactory" />
+          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+          <filter class="solr.WordDelimiterFilterFactory"
+            splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
+            splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
+            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="0" />
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+        </analyzer>
+      </fieldtype>
+
+      <fieldtype name="name_general" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+        <analyzer>
+          <tokenizer class="solr.StandardTokenizerFactory"/>
+          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+          <filter class="solr.BeiderMorseFilterFactory" nameType="GENERIC" ruleType="APPROX" concat="true" languageSet="auto" />
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+        </analyzer>
+      </fieldtype>
+
+      <!-- Stored JSON -->
+      <fieldType name="json_field" class="solr.TextField" autoGeneratePhraseQueries="false"/>
+      
+      <!-- Analyzed Text, English -->
+      <fieldtype name="text_en" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+        <analyzer>
+          <tokenizer class="solr.WhitespaceTokenizerFactory" />
+          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+          <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_en.txt"/>
+          <filter class="solr.WordDelimiterFilterFactory"
+            splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
+            splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
+            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+          <filter class="solr.SnowballPorterFilterFactory" language="English"/>
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+        </analyzer>
+      </fieldtype>
+
+      <!-- Analyzed Text, Russian -->
+      <fieldtype name="text_ru" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+        <analyzer>
+          <tokenizer class="solr.WhitespaceTokenizerFactory" />
+          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+          <filter class="solr.StopFilterFactory" words="lang/stopwords_ru.txt"/>
+          <filter class="solr.WordDelimiterFilterFactory"
+            splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
+            splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
+            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+          <filter class="solr.RussianLightStemFilterFactory"/>
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+        </analyzer>
+      </fieldtype>
+
+      <!-- Analyzed Text, Hungarian -->
+      <fieldtype name="text_hu" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+        <analyzer>
+          <tokenizer class="solr.WhitespaceTokenizerFactory" />
+          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+          <filter class="solr.StopFilterFactory" words="lang/stopwords_hu.txt"/>
+          <filter class="solr.WordDelimiterFilterFactory"
+            splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
+            splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
+            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+          <filter class="solr.SnowballPorterFilterFactory" language="Hungarian" />
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+        </analyzer>
+      </fieldtype>
+
+      <!-- Analyzed Text, Polish -->
+      <fieldtype name="text_pl" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+        <analyzer>
+          <tokenizer class="solr.WhitespaceTokenizerFactory" />
+          <filter class="solr.ICUFoldingFilterFactory"/>  <!-- NFKC, case folding, diacritics removed -->
+          <filter class="solr.StopFilterFactory" words="lang/stopwords_pl.txt"/>
+          <filter class="solr.WordDelimiterFilterFactory"
+            splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
+            splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
+            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+          <filter class="solr.StempelPolishStemFilterFactory"/>
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+        </analyzer>
+      </fieldtype>
+
+      <fieldType name="text_it" class="solr.TextField" positionIncrementGap="10000" autoGeneratePhraseQueries="true">
+        <analyzer> 
+          <tokenizer class="solr.StandardTokenizerFactory"/>
+          <!-- removes l', etc -->
+          <filter class="solr.ElisionFilterFactory" ignoreCase="true" articles="lang/contractions_it.txt"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+          <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_it.txt" format="snowball" />
+          <filter class="solr.WordDelimiterFilterFactory"
+            splitOnCaseChange="1" generateWordParts="1" catenateWords="1"
+            splitOnNumerics="0" generateNumberParts="1" catenateNumbers="1"
+            catenateAll="0" preserveOriginal="0" stemEnglishPossessive="1" />
+          <filter class="solr.ItalianLightStemFilterFactory"/>
+          <filter class="solr.RemoveDuplicatesTokenFilterFactory" />
+          <!-- more aggressive: <filter class="solr.SnowballPorterFilterFactory" language="Italian"/> -->
+        </analyzer>
+      </fieldType>
+
+      <!-- single token analyzed text, for sorting.  Punctuation is significant. -->
+      <fieldtype name="alphaSort" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+        <analyzer>
+          <tokenizer class="solr.KeywordTokenizerFactory" />
+          <filter class="solr.LowerCaseFilterFactory" />
+          <filter class="solr.ICUFoldingFilterFactory"/>
+          <filter class="solr.TrimFilterFactory" />
+          <filter class="solr.PatternReplaceFilterFactory" pattern="([^a-z0-9])" replacement="" replace="all" />
+        </analyzer>
+      </fieldtype>
+
+      <fieldtype name="archivalReferenceNumberSearch" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+        <analyzer>
+          <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+          <filter class="solr.LowerCaseFilterFactory"/>
+          <filter class="solr.PatternReplaceFilterFactory" pattern="(:|-|/)" replacement="|" replace="all" />
+          <filter class="solr.TrimFilterFactory" />
+        </analyzer>
+      </fieldtype>
+    </types>
+</schema>
