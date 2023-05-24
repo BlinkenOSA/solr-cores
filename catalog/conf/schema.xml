@@ -77,23 +77,9 @@
     <field name="description_search_pl" type="text_pl" indexed="true" required="false" stored="true" multiValued="true"/>
     <field name="description_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
 
-    <field name="subject_search_en" type="text_en" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="subject_search_hu" type="text_hu" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="subject_search_ru" type="text_ru" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="subject_search_pl" type="text_pl" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="subject_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
-
-    <field name="contributor_search_en" type="text_en" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="contributor_search_hu" type="text_hu" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="contributor_search_ru" type="text_ru" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="contributor_search_pl" type="text_pl" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="contributor_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
-
-    <field name="geo_search_en" type="text_en" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="geo_search_hu" type="text_hu" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="geo_search_ru" type="text_ru" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="geo_search_pl" type="text_pl" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="geo_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
+    <field name="subject_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
+    <field name="contributor_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
+    <field name="geo_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
 
     <field name="full_text_en" type="text_en" indexed="true" required="false" stored="true" multiValued="true"/>
     <field name="full_text_hu" type="text_hu" indexed="true" required="false" stored="true" multiValued="true"/>
