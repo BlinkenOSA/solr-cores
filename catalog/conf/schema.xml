@@ -73,10 +73,10 @@
     <field name="contents_summary_search_pl" type="text_pl" indexed="true" required="false" stored="true" multiValued="true"/>
     <field name="contents_summary_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
 
-    <field name="subject_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="contributor_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="keyword_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
-    <field name="geo_search_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
+    <field name="subject_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
+    <field name="contributor_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
+    <field name="keyword_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
+    <field name="geo_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
 
     <field name="full_text_en" type="text_en" indexed="true" required="false" stored="true" multiValued="true"/>
     <field name="full_text_hu" type="text_hu" indexed="true" required="false" stored="true" multiValued="true"/>
