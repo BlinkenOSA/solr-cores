@@ -813,24 +813,23 @@
          "invariants" values from being used, so don't use this mechanism
          unless you are sure you always want it.
       -->
-    <!--
-       <lst name="invariants">
-         <str name="facet.field">cat</str>
-         <str name="facet.field">manu_exact</str>
-         <str name="facet.query">price:[* TO 500]</str>
-         <str name="facet.query">price:[500 TO *]</str>
-       </lst>
-      -->
-    <!-- If the default list of SearchComponents is not desired, that
-         list can either be overridden completely, or components can be
-         prepended or appended to the default list.  (see below)
-      -->
-    <!--
-       <arr name="components">
-         <str>nameOfCustomComponent1</str>
-         <str>nameOfCustomComponent2</str>
-       </arr>
-      -->
+    <lst name="invariants">
+      <str name="facet">true</str>
+      <str name="facet.limit">-1</str>
+      <str name="facet.field">record_origin_facet</str>
+      <str name="facet.field">primary_type_facet</str>
+      <str name="facet.field">description_level_facet</str>
+      <str name="facet.field">subject_wikidata_facet</str>
+      <str name="facet.field">contributor_wikidata_facet</str>
+      <str name="facet.field">geo_wikidata_facet</str>
+      <str name="facet.field">keyword_facet</str>
+      <str name="facet.field">year_created_facet</str>
+      <str name="facet.field">availability_facet</str>
+      <str name="hl">true</str>
+      <str name="hl.fl">title</str>
+      <str name="wt">json</str>
+      <str name="indent">true</str>
+    </lst>
   </requestHandler>
 
   <!-- A request handler that returns indented JSON by default -->
