@@ -826,6 +826,7 @@
       <str name="facet.field">keyword_facet</str>
       <str name="facet.field">year_created_facet</str>
       <str name="facet.field">availability_facet</str>
+      <str name="sort">score desc, fonds_sort asc, subfonds_sort asc, series_sort asc, container_number_sort asc, sequence_number_sort asc, title_sort asc</str>
       <str name="hl">true</str>
       <str name="hl.fl">title</str>
       <str name="wt">json</str>
