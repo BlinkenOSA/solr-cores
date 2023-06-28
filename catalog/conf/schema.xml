@@ -2,6 +2,7 @@
 <schema name="catalog-config" version="1.6">
     <!-- Built-in fields -->
     <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="_text_" type="text_general" indexed="true" stored="false" multiValued="true"/>
     <field name="_version_" type="plong" indexed="false" stored="false"/>
 
     <!-- Identifiers -->
