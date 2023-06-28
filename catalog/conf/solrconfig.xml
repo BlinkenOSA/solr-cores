@@ -816,6 +816,7 @@
     <lst name="invariants">
       <str name="facet">true</str>
       <str name="facet.limit">-1</str>
+      <str name="facet.mincount">1</str>
       <str name="facet.field">record_origin_facet</str>
       <str name="facet.field">primary_type_facet</str>
       <str name="facet.field">description_level_facet</str>
