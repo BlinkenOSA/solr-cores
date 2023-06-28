@@ -86,12 +86,12 @@
     <field name="full_text_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
 
      <!-- Sort fields -->
-     <field name="fonds_sort" type="int" indexed="true" stored="false" />
-     <field name="subfonds_sort" type="int" indexed="true" stored="false" />
-     <field name="series_sort" type="int" indexed="true" stored="false" />
-     <field name="container_number_sort" type="int" indexed="true" stored="false" />
-     <field name="folder_number_sort" type="int" indexed="true" stored="false" />
-     <field name="sequence_number_sort" type="int" indexed="true" stored="false" />
+     <field name="fonds_sort" type="pint" indexed="true" stored="false" />
+     <field name="subfonds_sort" type="pint" indexed="true" stored="false" />
+     <field name="series_sort" type="pint" indexed="true" stored="false" />
+     <field name="container_number_sort" type="pint" indexed="true" stored="false" />
+     <field name="folder_number_sort" type="pint" indexed="true" stored="false" />
+     <field name="sequence_number_sort" type="pint" indexed="true" stored="false" />
      <field name="digital_repository_sort" type="alphaSort" indexed="true" stored="false" />
 
     <!-- Field to use to determine and enforce document uniqueness.
