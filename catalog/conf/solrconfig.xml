@@ -814,6 +814,27 @@
          unless you are sure you always want it.
       -->
     <lst name="invariants">
+      <str name="defType">edismax</str>
+      <str name="qf">
+        identifier_search^100
+
+        title_search_en^100
+        title_search_hu^100
+        title_search_ru^100
+        title_search_pl^100
+        title_search_general^100
+
+        contents_summary_search_en^100
+        contents_summary_search_hu^100
+        contents_summary_search_ru^100
+        contents_summary_search_pl^100
+        contents_summary_search_general^100
+
+        subject_search^50
+        contributor_search^50
+        keyword_search^50
+        geo_search^50
+      </str>
       <str name="facet">true</str>
       <str name="facet.limit">-1</str>
       <str name="facet.mincount">1</str>
@@ -828,7 +849,7 @@
       <str name="facet.field">availability_facet</str>
       <str name="sort">score desc, fonds_sort asc, subfonds_sort asc, series_sort asc, container_number_sort asc, sequence_number_sort asc, title_sort asc</str>
       <str name="hl">true</str>
-      <str name="hl.fl">title</str>
+      <str name="hl.fl">*</str>
       <str name="wt">json</str>
       <str name="indent">true</str>
     </lst>
