@@ -16,9 +16,11 @@
     <field name="container_type" type="string" indexed="false" stored="true" />
     <field name="title" type="string" indexed="false" required="false" stored="true"/>
     <field name="title_original" type="string" indexed="false" required="false" stored="true"/>
+    <field name="contents_summary" type="string" indexed="false" required="false" stored="true"/>
+    <field name="contents_summary_original" type="string" indexed="false" required="false" stored="true"/>
     <field name="reference_code" type="string" indexed="false" required="false" stored="true"/>
     <field name="date_created" type="string" indexed="false" required="false" stored="true"/>
-    <field name="creator" type="string" indexed="false" stored="true"/>
+    <field name="creator" type="strings" indexed="false" stored="true"/>
     <field name="original_locale" type="string" indexed="false" stored="true"/>
 
     <!-- Finding Aids Entities display fields -->
@@ -43,6 +45,9 @@
     <field name="author" type="strings" indexed="false" stored="true" />
     <field name="extent" type="strings" indexed="false" stored="true" />
     <field name="publisher" type="strings" indexed="false" stored="true" />
+
+    <!-- Folder / Item specific filter fields -->
+    <field name="series_id" type="string" indexed="true" stored="false" />
 
     <!-- Facet fields-->
     <field name="record_origin_facet" type="strings" indexed="true" stored="true" />
@@ -88,12 +93,12 @@
     <field name="full_text_general" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
 
      <!-- Sort fields -->
-     <field name="fonds_sort" type="pint" indexed="true" stored="false" />
-     <field name="subfonds_sort" type="pint" indexed="true" stored="false" />
-     <field name="series_sort" type="pint" indexed="true" stored="false" />
-     <field name="container_number_sort" type="pint" indexed="true" stored="false" />
-     <field name="folder_number_sort" type="pint" indexed="true" stored="false" />
-     <field name="sequence_number_sort" type="pint" indexed="true" stored="false" />
+     <field name="fonds_sort" type="pint" indexed="true" stored="true" />
+     <field name="subfonds_sort" type="pint" indexed="true" stored="true" />
+     <field name="series_sort" type="pint" indexed="true" stored="true" />
+     <field name="container_number_sort" type="pint" indexed="true" stored="true" />
+     <field name="folder_number_sort" type="pint" indexed="true" stored="true" />
+     <field name="sequence_number_sort" type="pint" indexed="true" stored="true" />
      <field name="digital_repository_sort" type="text_gen_sort" indexed="true" stored="false" />
      <field name="title_sort" type="text_gen_sort" indexed="true" stored="false" />
 
