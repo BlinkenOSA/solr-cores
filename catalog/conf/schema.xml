@@ -47,6 +47,8 @@
     <field name="publisher" type="strings" indexed="false" stored="true" />
 
     <!-- Folder / Item specific filter fields -->
+    <field name="fonds_id" type="string" indexed="true" stored="false" />
+    <field name="subfonds_id" type="string" indexed="true" stored="false" />
     <field name="series_id" type="string" indexed="true" stored="false" />
 
     <!-- Facet fields-->
