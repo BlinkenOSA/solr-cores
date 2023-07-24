@@ -52,12 +52,13 @@
     <field name="series_id" type="string" indexed="true" stored="false" />
 
     <!-- Facet fields-->
-    <field name="record_origin_facet" type="strings" indexed="true" stored="true" />
-    <field name="primary_type_facet" type="strings" indexed="true" stored="true" />
-    <field name="description_level_facet" type="string" indexed="true" stored="true" />
-    <field name="subject_facet" type="strings" indexed="true" stored="true"/>
-    <field name="subject_wikidata_facet" type="strings" indexed="true" stored="true"/>
+    <field name="record_origin_facet" type="strings" indexed="true" stored="true" docValues="true"/>
+    <field name="primary_type_facet" type="strings" indexed="true" stored="true" docValues="true"/>
+    <field name="description_level_facet" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="subject_facet" type="strings" indexed="true" stored="true" docValues="true"/>
+    <field name="subject_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="subject_term_facet" type="strings" indexed="true" stored="true" docValues="true"/>
+    <field name="subject_term_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="keyword_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="contributor_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="contributor_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
@@ -65,8 +66,8 @@
     <field name="geo_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="year_created_facet" type="pints" indexed="true" stored="true" docValues="true"/>
     <field name="language_facet" type="strings" indexed="true" stored="true" docValues="true"/>
-    <field name="archival_unit_theme_facet" type="strings" indexed="true" stored="true" />
-    <field name="availability_facet" type="string" indexed="true" stored="true" />
+    <field name="archival_unit_theme_facet" type="strings" indexed="true" stored="true" docValues="true"/>
+    <field name="availability_facet" type="string" indexed="true" stored="true" docValues="true"/>
 
     <!-- Search fields -->
     <field name="identifier_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
