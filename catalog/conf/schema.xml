@@ -57,8 +57,6 @@
     <field name="description_level_facet" type="string" indexed="true" stored="true" docValues="true"/>
     <field name="subject_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="subject_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
-    <field name="subject_term_facet" type="strings" indexed="true" stored="true" docValues="true"/>
-    <field name="subject_term_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="keyword_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="contributor_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="contributor_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>

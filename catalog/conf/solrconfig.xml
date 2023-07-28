@@ -771,7 +771,7 @@
       -->
     <lst name="defaults">
       <str name="echoParams">explicit</str>
-      <int name="rows">10</int>
+      <int name="rows">20</int>
       <!-- Default search field
          <str name="df">text</str> 
         -->
@@ -859,7 +859,7 @@
   <requestHandler name="/folders_items" class="solr.SearchHandler">
     <lst name="defaults">
       <str name="echoParams">explicit</str>
-      <int name="rows">10</int>
+      <int name="rows">50</int>
     </lst>
     <lst name="invariants">
       <str name="defType">edismax</str>
