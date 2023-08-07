@@ -45,7 +45,8 @@
     <field name="author" type="strings" indexed="false" stored="true" />
     <field name="extent" type="strings" indexed="false" stored="true" />
     <field name="publisher" type="strings" indexed="false" stored="true" />
-    <field name="marc" type="strings" indexed="false" stored="true" />
+    <field name="thumbnail" type="strings" indexed="false" stored="true" />
+    <field name="marc" type="string_big" indexed="false" stored="true" />
 
     <!-- Folder / Item specific filter fields -->
     <field name="fonds_id" type="string" indexed="true" stored="false" />
@@ -67,7 +68,8 @@
     <field name="language_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="archival_unit_theme_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="availability_facet" type="string" indexed="true" stored="true" docValues="true"/>
-    <field name="library_collection_facet" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="library_subject_term_facet" type="strings" indexed="true" stored="true" docValues="true"/>
+    <field name="library_collection_facet" type="strings" indexed="true" stored="true" docValues="true"/>
 
     <!-- Search fields -->
     <field name="identifier_search" type="text_general" indexed="true" required="false" stored="true" multiValued="true"/>
@@ -949,5 +951,10 @@
        <str name="paramkey">param value</str>
      </similarity>
     -->
+    <fieldtype name="string_big" class="solr.TextField" sortMissingLast="true" omitNorms="true">
+      <analyzer>
+        <tokenizer class="solr.KeywordTokenizerFactory"/>
+      </analyzer>
+    </fieldtype>
 
 </schema>
