@@ -1,3 +1,4 @@
 get_files.sh
 deploy.sh
 .DS_Store
+.gitignore.save
