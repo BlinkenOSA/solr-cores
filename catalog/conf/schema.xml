@@ -32,6 +32,7 @@
     <!-- Digital Version related fields -->
     <field name="digital_version_exists" type="boolean" indexed="false" required="false" stored="true"/>
     <field name="digital_version_online" type="boolean" indexed="false" required="false" stored="true"/>
+    <field name="digital_version_technical_metadata" type="string" indexed="false" required="false" stored="true"/>
     <field name="digital_version_barcode" type="string" indexed="false" required="false" stored="true"/>
 
     <!-- Archival Unit specific display fields -->
