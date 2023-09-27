@@ -68,6 +68,7 @@
     <field name="geo_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="year_created_facet" type="pints" indexed="true" stored="true" docValues="true"/>
     <field name="language_facet" type="strings" indexed="true" stored="true" docValues="true"/>
+    <field name="language_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="archival_unit_theme_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="availability_facet" type="string" indexed="true" stored="true" docValues="true"/>
     

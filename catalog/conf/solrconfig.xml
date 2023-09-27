@@ -805,7 +805,7 @@
       <str name="facet.field">contributor_wikidata_facet</str>
       <str name="facet.field">geo_wikidata_facet</str>
       <str name="facet.field">keyword_facet</str>
-      <str name="facet.field">language_facet</str>
+      <str name="facet.field">language_wikidata_facet</str>
       <str name="facet.field">year_created_facet</str>
       <str name="facet.field">availability_facet</str>
       <str name="sort">score desc, fonds_sort asc, subfonds_sort asc, series_sort asc, container_number_sort asc, folder_number_sort asc, sequence_number_sort asc, title_sort asc</str>
