@@ -865,6 +865,7 @@
     <lst name="defaults">
       <str name="echoParams">explicit</str>
       <int name="rows">10</int>
+      <str name="facet.sort">count</str>
     </lst>
     <lst name="invariants">
       <str name="defType">edismax</str>
@@ -874,7 +875,6 @@
       </str>
       <str name="facet">true</str>
       <str name="facet.limit">-1</str>
-      <str name="facet.sort">count</str>
       <str name="facet.mincount">1</str>
       <str name="facet.field">subject_facet</str>
       <str name="facet.field">contributor_facet</str>
