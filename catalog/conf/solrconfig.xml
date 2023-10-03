@@ -883,6 +883,7 @@
       <str name="facet.field">primary_type_facet</str>
       <str name="facet.field">availability_facet</str>
       <str name="facet.field">year_created_facet</str>
+      <str name="facet.field">library_collection_facet</str>
       <str name="f.year_created_facet.facet.sort">index</str>
       <str name="wt">json</str>
       <str name="indent">true</str>
