@@ -71,7 +71,8 @@
     <field name="language_wikidata_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="archival_unit_theme_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="availability_facet" type="string" indexed="true" stored="true" docValues="true"/>
-    
+    <field name="series_facet" type="string" indexed="true" stored="true" docValues="true"/>
+
     <!-- Library specific facet fields-->
     <field name="author_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="director_facet" type="strings" indexed="true" stored="true" docValues="true"/>
