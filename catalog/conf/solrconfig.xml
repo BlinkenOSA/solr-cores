@@ -897,7 +897,7 @@
       <str name="facet.limit">-1</str>
       <str name="facet.mincount">1</str>
       <str name="facet.field">contributor_facet</str>
-      <str name="facet.field">geo_facet</str>
+      <str name="facet.field">geo_wikidata_facet</str>
       <str name="facet.field">year_created_facet</str>
       <str name="facet.field">keyword_facet</str>
       <str name="facet.field">series_facet</str>
