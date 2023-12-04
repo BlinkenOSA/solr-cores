@@ -7,6 +7,7 @@
 
     <!-- Identifiers -->
     <field name="ams_id" type="pint" indexed="true" required="false" stored="true"/>
+    <field name="guid" type="string" indexed="true" required="false" stored="true"/>
     <field name="call_number" type="string" indexed="true" stored="true" />
 
     <!-- Display fields -->
@@ -72,6 +73,7 @@
     <field name="archival_unit_theme_facet" type="strings" indexed="true" stored="true" docValues="true"/>
     <field name="availability_facet" type="string" indexed="true" stored="true" docValues="true"/>
     <field name="series_facet" type="string" indexed="true" stored="true" docValues="true"/>
+    <field name="digital_collection_facet" type="string" indexed="true" stored="true" docValues="true"/>
 
     <!-- Library specific facet fields-->
     <field name="author_facet" type="strings" indexed="true" stored="true" docValues="true"/>

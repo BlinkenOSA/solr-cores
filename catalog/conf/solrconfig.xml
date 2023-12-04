@@ -852,7 +852,7 @@
       <str name="facet.field">keyword_facet</str>
       <str name="facet.field">geo_facet</str>
       <str name="facet.field">year_created_facet</str>
-      <str name="sort">fonds_sort asc, subfonds_sort asc, series_sort asc, container_number_sort asc, folder_number_sort asc, sequence_number_sort asc, title_sort asc</str>
+      <str name="sort">fonds_sort asc, subfonds_sort asc, series_sort asc, container_number_sort asc, folder_number_sort asc, sequence_number_sort asc, title_sort asc, id asc</str>
       <str name="hl">true</str>
       <str name="hl.fl">*</str>
       <str name="hl.fragsize">0</str>
