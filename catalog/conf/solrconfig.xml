@@ -821,6 +821,13 @@
     <lst name="defaults">
       <str name="echoParams">explicit</str>
       <int name="rows">50</int>
+      <str name="fl">
+        id,ams_id,call_number,record_origin,primary_type,container_type,original_locale,container_number_sort,
+        title,title_original,
+        contents_summary,contents_summary_original,
+        info,
+        digital_version_exists,digital_version_online,digital_version_barcode
+      </str>
     </lst>
     <lst name="invariants">
       <str name="defType">edismax</str>
