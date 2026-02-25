@@ -9,7 +9,7 @@
     <field name="ams_id" type="pint" indexed="true" required="false" stored="true"/>
     <field name="guid" type="string" indexed="true" required="false" stored="true"/>
     <field name="call_number" type="string" indexed="true" stored="true" />
-
+    
     <!-- Display fields -->
     <field name="record_origin" type="string" indexed="false" stored="true"/>
     <field name="primary_type" type="string" indexed="false" stored="true" />
@@ -34,7 +34,7 @@
     <field name="digital_version_exists" type="boolean" indexed="false" required="false" stored="true"/>
     <field name="digital_version_online" type="boolean" indexed="false" required="false" stored="true"/>
     <field name="digital_version_technical_metadata" type="string" indexed="false" required="false" stored="true"/>
-    <field name="digital_version_barcode" type="string" indexed="false" required="false" stored="true"/>
+    <field name="digital_version_barcode" type="string" indexed="true" required="false" stored="true"/>
 
     <!-- Archival Unit specific display fields -->
     <field name="fonds_name" type="string" indexed="false" stored="true" />
